@@ -3,62 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?php echo isset($pageTitle) ? $pageTitle : 'Rio Ave | Tecnologia'; ?></title>
+  <title><?php echo $pageTitle ?? 'Rio Ave | Tecnologia'; ?></title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            primary: '#22d3ee',
-            dark: '#0b1120',
-            surface: '#1e293b'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          }
+          colors: { primary: '#22d3ee', dark: '#0b1120' },
+          fontFamily: { sans: ['Outfit', 'sans-serif'] }
         }
       }
     }
   </script>
   
   <style>
-    .mobile-menu-enter { opacity: 0; transform: translateY(-10px); }
-    .mobile-menu-enter-active { opacity: 1; transform: translateY(0); transition: opacity 300ms ease-out, transform 300ms ease-out; }
+    /* Header Fixo com Efeito Vidro Permanente */
+    .glass-header {
+      background: rgba(11, 17, 32, 0.6); 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    /* Linha indicadora centralizada ao passar o mouse */
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after, .nav-link.active::after { 
+      width: 100%; 
+    }
+    
     body.menu-open { overflow: hidden; }
   </style>
 </head>
 <body class="bg-dark text-gray-200 font-sans antialiased">
 
-<header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-    <a href="index.php" class="flex items-center gap-3 z-50 relative">
-      <img src="/style/img/logo.png" alt="Logo Rio Ave" class="h-10 w-auto select-none" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
-      <span class="text-xl font-bold text-white tracking-tight hidden">Rio Ave</span>
-    </a>
-
-    <nav class="hidden md:flex items-center gap-12 text-[13px] font-medium tracking-wide text-gray-400">
-      <a href="suporte.php" class="nav-link relative py-1 hover:text-primary transition-colors duration-200">SUPORTE</a>
-      <a href="inovacao.php" class="nav-link relative py-1 hover:text-primary transition-colors duration-200">INOVAÇÃO</a>
-      <a href="inventario.php" class="nav-link relative py-1 hover:text-primary transition-colors duration-200">INVENTÁRIO</a>
+<header id="site-header" class="fixed top-0 w-full z-50 flex items-center justify-center h-16 glass-header">
+  <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-center relative">
+    
+    <nav class="hidden lg:flex items-center gap-16 text-[10px] font-bold tracking-[0.25em] text-gray-400 uppercase">
+      <a href="index.php" class="nav-link hover:text-white <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active text-white' : ''; ?>">Início</a>
+      <a href="#servicos" class="nav-link hover:text-white">Serviços</a>
+      <a href="dicas.php" class="nav-link hover:text-white">Dicas</a>
     </nav>
 
-    <button id="menu-btn" class="md:hidden z-50 p-2 text-gray-300 focus:outline-none focus:text-primary transition-colors" aria-label="Menu" aria-expanded="false">
-      <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button id="menu-btn" class="lg:hidden absolute right-6 p-2 text-white/50 hover:text-white transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
     </button>
-  </div>
-
-  <div id="mobile-menu" class="hidden absolute top-0 left-0 w-full min-h-screen bg-dark/95 backdrop-blur-xl pt-24 px-6 md:hidden flex-col items-center gap-8">
-    <nav class="flex flex-col w-full gap-2">
-      <a href="suporte.php" class="mobile-link block w-full py-4 text-center text-lg font-medium text-gray-300 hover:bg-white/5 rounded-xl transition-all">SUPORTE</a>
-      <a href="inovacao.php" class="mobile-link block w-full py-4 text-center text-lg font-medium text-gray-300 hover:bg-white/5 rounded-xl transition-all">INOVAÇÃO</a>
-      <a href="inventario.php" class="mobile-link block w-full py-4 text-center text-lg font-medium text-gray-300 hover:bg-white/5 rounded-xl transition-all">INVENTÁRIO</a>
-    </nav>
   </div>
 </header>

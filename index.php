@@ -1,39 +1,27 @@
 <?php 
-  $pageTitle = "Rio Ave | Home - Tecnologia"; 
-  include 'includes/header.php'; 
+  $pageTitle = "Rio Ave | Inovação e Tecnologia"; 
+  include 'includes/header.php'; //
 ?>
 
-<div class="h-20"></div>
+<section class="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center" 
+         style="background-image: url('style/img/bg_rioavetech.jpg');">
+  
+  <div class="absolute inset-0 bg-black/50 backdrop-brightness-75"></div>
 
-<section class="relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 py-16 md:py-28">
-    <h2 class="text-4xl md:text-6xl font-bold text-white max-w-4xl leading-tight">
-      Núcleo de <span class="text-primary">Tecnologia</span> da <br><span class="text-primary">Rio Ave</span>
-    </h2>
-    <p class="mt-6 md:mt-8 text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed">
-      Este ambiente centraliza os pilares tecnológicos da Rio Ave. Cada área possui 
-      autonomia, propósito claro e foco em eficiência, inovação e controle.
+  <div class="relative z-10 text-center px-6 w-full max-w-6xl">
+    <h1 class="text-3xl md:text-6xl font-bold text-white uppercase tracking-tight leading-[1.1]">
+      Núcleo de Inovação <br> 
+      e Tecnologia Rio Ave
+    </h1>
+    
+    <p class="mt-10 text-gray-300 text-sm md:text-lg max-w-xl mx-auto font-light tracking-[0.2em] uppercase opacity-70">
+      Ambiente central de inovação tecnológica.
     </p>
   </div>
-  <div class="absolute -top-32 -left-32 w-64 h-64 md:w-96 md:h-96 bg-primary/20 blur-3xl rounded-full pointer-events-none"></div>
 </section>
 
-<section class="py-12 md:py-24 relative">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="mb-8 md:mb-12 space-y-3">
-      <h3 class="text-2xl md:text-4xl font-bold text-white">Áreas Tecnológicas</h3>
-      <p class="text-gray-400 max-w-2xl text-sm md:text-base">Estruturas independentes e governança tecnológica.</p>
-    </div>
+<?php include 'includes/servicos.php'; ?>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-      <a href="suporte.php" class="card group relative rounded-2xl p-8 bg-white/5 border border-white/10 hover:border-primary/40 transition-all">
-          <h4 class="text-xl font-semibold text-white">Suporte</h4>
-          <p class="mt-3 text-gray-400 text-sm">Resolução de incidentes e continuidade operacional.</p>
-      </a>
-      </div>
-  </div>
-</section>
+<?php include 'includes/dicas.php'; ?>
 
-<div class="h-16"></div>
-
-<?php include 'includes/footer.php'; ?>
+<?php include 'includes/footer.php'; // ?>
