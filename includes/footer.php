@@ -8,7 +8,8 @@
             src="style/img/logo.png" 
             alt="Logo Rio Ave" 
             class="h-10 w-auto brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-          > </a>
+          > 
+        </a>
         <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
           Ambiente centralizado de suporte, inovação e governança tecnológica para o Grupo Rio Ave.
         </p>
@@ -42,23 +43,44 @@
 </footer>
 
 <script>
-  // Lógica do Smart Header (Ativa no Scroll)
+  /* --- 1. Motor de Fluidez (Intersection Observer) --- */
+  const observerOptions = {
+    threshold: 0.15
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  /* --- 2. Inicialização de Scripts --- */
+  document.addEventListener('DOMContentLoaded', () => {
+    // Ativa observação para elementos com classe .reveal
+    const elementsToReveal = document.querySelectorAll('.reveal');
+    elementsToReveal.forEach(el => revealObserver.observe(el));
+
+    // Lógica do Menu Mobile
+    const menuBtn = document.getElementById('menu-btn');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        // Adicione aqui a lógica de abertura do seu menu mobile caso necessário
+        console.log("Menu clicado");
+      });
+    }
+  });
+
+  /* --- 3. Controle do Header no Scroll --- */
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 100) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
   });
-
-  // Toggle Menu Mobile
-  const menuBtn = document.getElementById('menu-btn');
-  if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-      // Adicione aqui a lógica de abertura do seu menu mobile
-    });
-  }
 </script>
 </body>
 </html>
