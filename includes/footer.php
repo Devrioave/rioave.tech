@@ -11,7 +11,7 @@
           > 
         </a>
         <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
-          Ambiente centralizado de suporte, inovação e governança tecnológica para o Grupo Rio Ave.
+          Ambiente centralizado de inovação e governança tecnológica para o Grupo Rio Ave.
         </p>
       </div>
 

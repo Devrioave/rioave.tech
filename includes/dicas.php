@@ -1,9 +1,4 @@
-<?php 
-  $pageTitle = "Rio Ave | Dicas de Tecnologia"; 
-  include 'includes/header.php'; //
-?>
-
-<section class="relative pt-40 pb-20 bg-[#0b1120] flex items-center justify-center overflow-hidden">
+<section id="dicas" class="relative pt-40 pb-20 bg-[#0b1120] flex items-center justify-center overflow-hidden">
   <div class="relative z-10 text-center px-6 w-full max-w-4xl">
     <h1 class="text-3xl md:text-6xl font-bold text-white uppercase tracking-tighter leading-tight">
       Dicas de <span class="text-primary font-light">Tecnologia</span>

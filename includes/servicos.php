@@ -17,15 +17,16 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       
-      <a href="#" 
+      <!-- VAGAS EM ABERTO -->
+      <a href="vagas.php" 
          data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"
          class="group flex flex-col items-start p-10 bg-white/5 border border-white/10 rounded-3xl transition-all duration-500 ease-out hover:bg-white/10 hover:border-primary/30 hover:-translate-y-3 will-change-transform">
         <div class="w-16 h-16 mb-8 bg-white rounded-2xl flex items-center justify-center p-4 shadow-2xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-2">
-          <img src="https://img.icons8.com/ios-filled/100/0b1120/cloud.png" alt="Cloud RA" class="w-full h-auto">
+          <img src="https://img.icons8.com/ios-filled/100/0b1120/find-matching-job.png" alt="Vagas em Aberto" class="w-full h-auto">
         </div>
-        <h3 class="text-white font-bold tracking-[0.2em] text-xs uppercase">Cloud RA</h3>
+        <h3 class="text-white font-bold tracking-[0.2em] text-xs uppercase">Vagas em Aberto</h3>
         <p class="mt-4 text-gray-500 text-[11px] leading-relaxed font-light group-hover:text-gray-300 transition-colors duration-500">
-          Resiliência e colaboração em nuvem. Infraestrutura escalável para gestão de ativos digitais com alta disponibilidade e segurança de dados.
+          Oportunidades de crescimento profissional. Conecte-se às vagas disponíveis e faça parte do ecossistema de inovação do Grupo Rio Ave.
         </p>
       </a>
 
